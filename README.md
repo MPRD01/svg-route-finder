@@ -41,7 +41,7 @@ Because this engine is built entirely in vanilla HTML, CSS, and JavaScript with 
    Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/MPRD01/svg-route-finder>
 cd svg-route-finder
 ```
 
