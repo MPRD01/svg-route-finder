@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Route Finder - V5</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="controls">
+        <h1>SVG ROUTE FINDER (V5)</h1>
+        <div class="control-group">
+            <input type="file" id="file-upload" accept=".svg,image/svg+xml">
+
+            <label>Path Res (Units):
+                <input type="range" id="res-slider" min="5" max="200" value="30">
+                <span id="res-val">30</span>
+            </label>
+
+            <label>Merge Tolerance (px):
+                <input type="range" id="tol-slider" min="0" max="30" value="5">
+                <span id="tol-val">5</span>
+            </label>
+
+            <label>Algorithm:
+                <select id="algo-select">
+                    <option value="astar">A* (Fast)</option>
+                    <option value="dijkstra">Dijkstra (Shortest)</option>
+                </select>
+            </label>
+
+            <button id="btn-extract">Generate Graph</button>
+            <button id="btn-reset">Clear Route</button>
+            <button id="btn-inspect">Toggle Inspect</button>
+        </div>
+        <div id="status">Status: Awaiting SVG upload.</div>
+        <div id="progress-container" style="display:none;">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="debug-coords">Screen: -, - | SVG: -, -</div>
+    </div>
+
+    <div id="svg-container"></div>
+
+    <script src="src/math-utils.js"></script>
+    <script src="src/svg-extractor.js"></script>
+    <script src="src/graph.js"></script>
+    <script src="src/pathfinder.js"></script>
+    <script src="src/main.js"></script>
+</body>
+</html>
